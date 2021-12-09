@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "f37dbb75-00c8-4003-b795-df7a1652a8d7",
+		"name": "VehicleTracking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "captureLocation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GenerateToken",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"DeviceUser2\",\r\n\"password\" : \"123\",\r\n\"userType\" : \"DEVICE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9092/api/auth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9092",
+					"path": [
+						"api",
+						"auth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "currentlocation",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbjEiLCJhdWQiOiJPcHRpb25hbFtBRE1JTl0iLCJpYXQiOjE2Mzg4NjQ2NDcsImV4cCI6MTYzODk1MTA0N30.2bFfsvYca0DwAlTo1NZY1N-PYP-Dyf9oZ9GXwMq89XumXfIi7xh-tdxD2EE47Cu998J-3pSe2xYl7sp6D6TBWw",
+						"type": "text"
+					},
+					{
+						"key": "VIN",
+						"value": "V250",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/vehiclelocation/api/v1/vehicle/V-456/locate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"vehiclelocation",
+						"api",
+						"v1",
+						"vehicle",
+						"V-456",
+						"locate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getLocations",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer  eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbjEiLCJhdWQiOiJPcHRpb25hbFtBRE1JTl0iLCJpYXQiOjE2Mzg4NjQ2NDcsImV4cCI6MTYzODk1MTA0N30.2bFfsvYca0DwAlTo1NZY1N-PYP-Dyf9oZ9GXwMq89XumXfIi7xh-tdxD2EE47Cu998J-3pSe2xYl7sp6D6TBWw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9092/vehiclelocation/api/v1/vehicle/V-456/filter?startTime=2021-12-02T19:02:54.429-0000&endTime=2021-12-08T19:02:54.429-05:00",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9092",
+					"path": [
+						"vehiclelocation",
+						"api",
+						"v1",
+						"vehicle",
+						"V-456",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "startTime",
+							"value": "2021-12-02T19:02:54.429-0000"
+						},
+						{
+							"key": "endTime",
+							"value": "2021-12-08T19:02:54.429-05:00"
+						},
+						{
+							"key": null,
+							"value": "2000-10-31T01:30:00.000-05:00",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
