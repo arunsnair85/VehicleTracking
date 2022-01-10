@@ -6,4 +6,4 @@
 - VehicleDiscovery - Eureka server as service registry
 - Further details are available on projects  README file(except vehicleDiscovery) 
 ### POSTMAN
-- A postman collection is also attached with details
+- A postman collection is also attached with details  
